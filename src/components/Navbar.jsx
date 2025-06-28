@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router'
+import { Link } from 'react-router'
 import { CartContext } from '../context/CartContext'
 import { useContext } from 'react'
 
@@ -24,7 +24,7 @@ function Navbar() {
         </li>
       </ul>
     </nav>
-    <Outlet />
+
    </>
 
   )

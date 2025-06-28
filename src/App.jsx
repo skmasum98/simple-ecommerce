@@ -1,16 +1,17 @@
 
+import { Outlet } from 'react-router'
 import './App.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 function App() {
   
 
   return (
     <>
-      <div>
-       
-        <h1 className=' bg-amber-300'>Hello Ecommerce App</h1>
-      </div>
+      <Navbar />
+      <Outlet />
+      <Footer />
     </>
   )
 }
