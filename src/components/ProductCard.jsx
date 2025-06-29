@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function ProductCard({ product, onAddToCart }) {
   return (
     <div className="border rounded p-4 shadow hover:shadow-md transition">
-      <img src={product.image} alt={product.title} className="w-full h-48 object-cover rounded mb-2" />
+      <img src={product.image} alt={product.title} className="w-full h-64 object-cover rounded mb-2" />
       <h3 className="font-semibold">{product.title}</h3>
       <p className="text-gray-600 text-sm">{product.description.slice(0, 50)}...</p>
       <p className="font-bold">${product.price}</p>

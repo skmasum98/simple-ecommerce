@@ -11,11 +11,12 @@ export function CartProvider({ children }) {
       if (existing) {
         return prevItems.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + (product.quantity || 1) }
             : item
         );
       }
-      return [...prevItems, { ...product, quantity: 1 }];
+      // Always set quantity to product.quantity or 1
+      return [...prevItems, { ...product, quantity: product.quantity || 1 }];
     });
   };
 
@@ -24,7 +25,7 @@ export function CartProvider({ children }) {
   };
 
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, setCartItems }}>
       {children}
     </CartContext.Provider>
   );

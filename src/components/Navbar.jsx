@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router'
 import { CartContext } from '../context/CartContext'
 import { useContext } from 'react'
+import Logo from '../assets/logo.png'
 
 
 function Navbar() {
@@ -10,7 +11,7 @@ function Navbar() {
    <>
    
    <nav className="bg-blue-600 text-white p-4 flex justify-between items-center">
-      <Link to="/" className="font-bold text-xl">MyStore</Link>
+      <Link to="/" className="font-bold text-xl"><img className='max-h-12' src={Logo} alt="Logo" /></Link>
       <ul className="flex gap-4">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
