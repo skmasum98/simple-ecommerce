@@ -5,10 +5,13 @@ import './index.css'
 import { RouterProvider } from 'react-router'
 import { AppRoutes } from './routes/AppRoutes.jsx'
 import { CartProvider } from './context/CartContext.jsx'
+import { SearchProvider } from './context/SearchContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <CartProvider>
-    <RouterProvider router={AppRoutes}/>
-    </CartProvider>
+    <SearchProvider>
+      <RouterProvider router={AppRoutes}/>
+    </SearchProvider>
+  </CartProvider>
   
 )

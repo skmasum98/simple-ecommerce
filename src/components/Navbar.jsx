@@ -12,39 +12,42 @@ function Navbar() {
 
   
   return (
-   <>
-   <header className="bg-black text-white shadow">
+  <header className="bg-black text-white shadow sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between gap-4">
+
         {/* Logo */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <Link to="/" className="flex items-center font-bold text-xl gap-2">
             <img className="max-h-12 w-auto" src={Logo} alt="Logo" />
-            <span className="hidden sm:inline">thewebpal</span>
           </Link>
         </div>
 
-        {/* SearchBar in the middle (hidden on small screens) */}
+        {/* SearchBar in the middle (desktop only) */}
         <div className="w-full md:w-1/2 flex justify-center">
-          <div className="hidden md:block w-full">
+          <div className="hidden md:block w-1/2">
             <SearchBar />
           </div>
         </div>
 
-        {/* Hamburger menu for small screens */}
+        {/* Hamburger icon (mobile) */}
         <div className="md:hidden ml-auto">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="focus:outline-none"
             aria-label="Open menu"
           >
             <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              <path strokeLinecap="round" strokeLinejoin="round"
+                d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
             </svg>
           </button>
         </div>
 
-        {/* Navigation Links */}
-        <ul className={`flex-col md:flex-row flex items-center gap-4 mt-2 md:mt-0 bg-black md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto z-50 transition-all duration-200 ${menuOpen ? 'flex' : 'hidden'} md:flex`}>
+        {/* Menu links */}
+        <ul className={`
+          flex-col md:flex-row flex items-center gap-4 mt-2 md:mt-0
+          bg-black md:bg-transparent absolute md:static top-16 left-0 w-full md:w-auto z-50 transition-all duration-300
+          ${menuOpen ? 'flex' : 'hidden'} md:flex
+        `}>
           <li>
             <Link to="/" className="hover:text-green-400 transition" onClick={() => setMenuOpen(false)}>Home</Link>
           </li>
@@ -59,10 +62,13 @@ function Navbar() {
               </span>
             </Link>
           </li>
+          {/* mobile searchbar */}
+          <li className="w-full md:hidden px-4">
+            <SearchBar />
+          </li>
         </ul>
       </nav>
     </header>
-   </>
 
   )
 }
