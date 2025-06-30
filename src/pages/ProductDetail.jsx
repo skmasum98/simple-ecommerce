@@ -58,7 +58,7 @@ export default function ProductDetail() {
         </div>
         <p className="text-gray-600 mb-6 text-lg">{product.description}</p>
         <div className="flex items-center gap-6 mb-8">
-          <span className="text-3xl font-bold text-blue-600">${product.price}</span>
+          <span className="text-3xl font-bold text-green-600">${product.price}</span>
           <span className="text-sm text-gray-400 line-through">${(product.price * 1.2).toFixed(2)}</span>
           <span className="bg-red-100 text-red-600 px-2 py-1 rounded text-xs font-semibold">20% OFF</span>
         </div>
@@ -66,19 +66,19 @@ export default function ProductDetail() {
           <div className="flex items-center border rounded px-2 py-1 bg-gray-50">
             <button
               onClick={handleDecrease}
-              className="px-2 text-lg font-bold text-blue-600 hover:text-blue-800"
+              className="px-2 text-lg font-bold text-green-600 hover:text-green-800"
               aria-label="Decrease quantity"
             >-</button>
             <span className="px-3 select-none">{quantity}</span>
             <button
               onClick={handleIncrease}
-              className="px-2 text-lg font-bold text-blue-600 hover:text-blue-800"
+              className="px-2 text-lg font-bold text-green-600 hover:text-green-800"
               aria-label="Increase quantity"
             >+</button>
           </div>
           <button
             onClick={handleAddToCart}
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition font-bold shadow"
+            className="bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition font-bold shadow"
           >
             Add to Cart
           </button>

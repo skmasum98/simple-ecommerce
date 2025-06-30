@@ -5,10 +5,10 @@ import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg
 
 export default function Footer() {
   return (
-    <footer className="bg-amber-200 text-amber-900 mt-8">
+    <footer className="bg-black text-white mt-8">
       <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className='text-left'>
-          <h2 className="font-bold text-lg mb-2">Thewebpal</h2>
+          <h2 className="font-bold text-green-500 text-lg mb-2">THEWEBPAL</h2>
           <p className="text-sm">
             Your one-stop shop for quality products and great deals. Shop with confidence and enjoy fast delivery!
           </p>
@@ -27,13 +27,13 @@ export default function Footer() {
           <p className="text-sm">Email: support@thewebpal.com</p>
           <p className="text-sm">Phone: +1 234 567 890</p>
           <div className="flex gap-3 mt-2">
-            <a href="#" aria-label="Facebook" className="hover:text-blue-400">
+            <a href="#" aria-label="Facebook" className="text-blue-300 hover:text-blue-500">
               <FontAwesomeIcon icon={faFacebook} />
             </a>
-            <a href="#" aria-label="Twitter" className="hover:text-blue-400">
+            <a href="#" aria-label="Twitter" className="hover:text-blue-400 text-blue-500">
               <FontAwesomeIcon icon={faTwitter} />
             </a>
-            <a href="#" aria-label="Instagram" className="hover:text-pink-400">
+            <a href="#" aria-label="Instagram" className="hover:text-pink-400 text-pink-500">
               <FontAwesomeIcon icon={faInstagram} />
             </a>
           </div>
