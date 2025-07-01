@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "title": "Stylish Sneakers",
+    "description": "Comfortable and trendy sneakers for everyday wear",
+    "price": 59.99,
+    "image": "./assets/sneakers.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Classic Backpack",
+    "description": "Durable backpack for school or travel",
+    "price": 39.99,
+    "image": "https://img.freepik.com/free-photo/friends-going-hiking-winter_23-2150198198.jpg?semt=ais_hybrid&w=740"
+  },
+  {
+    "id": 3,
+    "title": "Casual T-shirt",
+    "description": "Soft cotton T-shirt with minimalist design for everyday wear.",
+    "price": 19.99,
+    "image": "https://i.pinimg.com/736x/ab/58/34/ab58349c2becf561a5bae775eb863f51.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Running Shorts",
+    "description": "Lightweight running shorts with quick-dry technology.",
+    "price": 24.99,
+    "image": "https://img.freepik.com/free-photo/summer-lifestyle-fashion-portrait-young-stylish-hipster-woman-walking-street_1153-6690.jpg?semt=ais_hybrid&w=740"
+  },
+  {
+    "id": 5,
+    "title": "Denim Jacket",
+    "description": "Classic blue denim jacket with front pockets and button closure.",
+    "price": 69.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBA6fa-fD0p2RGqJWaLZwqPwFdH9qug-c9KA&s"
+  },
+  {
+    "id": 6,
+    "title": "Wrist Watch",
+    "description": "Elegant wrist watch with leather strap and stainless steel case.",
+    "price": 120.00,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgeaq982aCup5Fn5NOvCFwYCqBGMBlTEn7Ag&s"
+  },
+  {
+    "id": 7,
+    "title": "Leather Wallet",
+    "description": "Slim leather wallet with multiple compartments for cards and cash.",
+    "price": 39.99,
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2hdMMhQvIYiboZ02B8TOm22uekd6GWmdB3g&s"
+  },
+  {
+    "id": 8,
+    "title": "Wireless Headphones",
+    "description": "High-quality Bluetooth headphones with noise cancellation feature.",
+    "price": 89.99,
+    "image": "https://img.freepik.com/free-photo/headphones-audio-listen_1203-7566.jpg?semt=ais_hybrid&w=740"
+  },
+  {
+    "id": 9,
+    "title": "Yoga Mat",
+    "description": "Eco-friendly yoga mat with non-slip surface for all exercises.",
+    "price": 29.99,
+    "image": "https://images.unsplash.com/photo-1605296867304-46d5465a13f1"
+  },
+  {
+    "id": 10,
+    "title": "Sunglasses",
+    "description": "UV-protection sunglasses with a stylish frame for sunny days.",
+    "price": 25.50,
+    "image": "https://i.pinimg.com/564x/fc/6e/8a/fc6e8ae40ca69774acd5f040a8927724.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Laptop Bag",
+    "description": "Professional laptop bag with padded compartment and sleek design.",
+    "price": 55.00,
+    "image": "https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTEyL3JtNDUzLXM4NC1wb20tMzEyNi1iYTEwLW1vY2t1cC5qcGc.jpg"
+  },
+  {
+    "id": 12,
+    "title": "Sports Water Bottle",
+    "description": "Durable BPA-free water bottle for sports and fitness activities.",
+    "price": 14.99,
+    "image": "https://img.freepik.com/premium-psd/sports-water-bottle-mockup_338742-3503.jpg"
+  },
+  {
+    "id": 13,
+    "title": "Winter Beanie",
+    "description": "Warm knitted beanie for cold winter days, available in multiple colors.",
+    "price": 12.99,
+    "image": "https://i.etsystatic.com/6409803/r/il/678907/3594220901/il_570xN.3594220901_i2x9.jpg"
+  },
+  {
+    "id": 14,
+    "title": "Fitness Smartwatch",
+    "description": "Smartwatch with heart rate monitor, steps tracker, and notifications.",
+    "price": 129.00,
+    "image": "https://img.freepik.com/premium-photo/beautiful-sportive-woman-after-fitness-jogging-workout-city-street_144962-16733.jpg?semt=ais_items_boosted&w=740"
+  },
+  {
+    "id": 15,
+    "title": "Travel Duffel Bag",
+    "description": "Spacious travel duffel with sturdy handles and waterproof lining.",
+    "price": 49.99,
+    "image": "https://img.freepik.com/free-photo/side-view-man-traveling-by-train_23-2150510176.jpg"
+  }
+]

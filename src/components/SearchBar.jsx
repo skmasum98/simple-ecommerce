@@ -9,6 +9,7 @@ export default function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/"); // redirect to Home so it shows results
+    setSearchTerm("");
   };
 
   return (
