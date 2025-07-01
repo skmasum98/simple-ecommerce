@@ -1,12 +1,19 @@
 import { useContext } from "react";
 import { SearchContext } from "../context/SearchContext";
+import { useNavigate } from "react-router";
 
 export default function SearchBar() {
   const { searchTerm, setSearchTerm } = useContext(SearchContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate("/"); // redirect to Home so it shows results
+  };
 
   return (
     <>
-    <form action="">
+    <form onSubmit={handleSubmit} action="">
       <input
         type="text"
         placeholder="Search products..."

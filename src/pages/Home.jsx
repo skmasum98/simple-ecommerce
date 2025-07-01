@@ -5,11 +5,20 @@ import ProductList from "../components/ProductList";
 import ProductFilter from "../components/ProductFilter";
 import { CartContext } from "../context/CartContext";
 import { SearchContext } from "../context/SearchContext";
+import Toast from "../components/Toast";
 
 export default function Home() {
   const { addToCart } = useContext(CartContext);
   const { searchTerm } = useContext(SearchContext)
   const [filter, setFilter] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
+
+
+  const handleAddToCart = (product) => {
+  addToCart(product);
+  setToastMessage(`${product.title} added to cart successfully!`);
+};
+
 
   const filteredProducts = Products
     .filter((p) =>
@@ -23,13 +32,26 @@ export default function Home() {
     });
 
   return (
-    <div className="p-4 bg-gray-200">
-      <div className="flex flex-col md:flex-row items-center justify-between mb-4 gap-4">
-        <h2 className="text-3xl font-bold  text-green-800">Top Products</h2>
+    <div className="w-11/12 max-w-7xl mx-auto py-5">
+    <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10">
+      <div className="flex flex-col md:flex-row items-center justify-between mb-8 gap-4 border-b pb-6 border-gray-200">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-green-700 tracking-tight">
+          Top Products
+        </h2>
         <ProductFilter filter={filter} setFilter={setFilter} />
       </div>
-      
-      <ProductList products={filteredProducts} onAddToCart={addToCart} />
+
+      <div className="mt-10">
+        <ProductList products={filteredProducts} onAddToCart={handleAddToCart} />
+      </div>
+
+      {toastMessage && (
+        <Toast message={toastMessage} onClose={() => setToastMessage("")} />
+      )}
     </div>
+  </div>
+
+
+    
   );
 }

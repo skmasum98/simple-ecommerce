@@ -1,10 +1,19 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router";
+import Toast from "../components/Toast";
 
 export default function Cart() {
   const { cartItems, removeFromCart, setCartItems } = useContext(CartContext);
   const navigate = useNavigate();
+  const [toastMessage, setToastMessage] = useState()
+
+
+  const handleRemove = (id) => {
+  removeFromCart(id);
+  setToastMessage("Item removed from cart successfully!");
+};
+
 
   const handleDecrease = (id) => {
     setCartItems((prev) =>
@@ -78,11 +87,14 @@ export default function Cart() {
                   <td className="py-2 px-2 font-bold">${(item.price * item.quantity).toFixed(2)}</td>
                   <td className="py-2 px-2">
                     <button
-                      onClick={() => removeFromCart(item.id)}
+                      onClick={() => handleRemove(item.id)}
                       className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
                     >
                       Remove
                     </button>
+                    {toastMessage && (
+                      <Toast message={toastMessage} onClose={() => setToastMessage("")} />
+                    )}
                   </td>
                 </tr>
               ))}

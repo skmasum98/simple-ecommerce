@@ -2,6 +2,7 @@ import { useParams, useNavigate } from "react-router";
 import { useContext, useState } from "react";
 import productsData from "../data/Products";
 import { CartContext } from "../context/CartContext";
+import Toast from "../components/Toast";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -10,6 +11,7 @@ export default function ProductDetail() {
 
   const product = productsData.find((p) => p.id === Number(id));
   const [quantity, setQuantity] = useState(1);
+  const [toastMessage, setToastMessage] = useState("");
 
   if (!product) {
     return (
@@ -27,6 +29,7 @@ export default function ProductDetail() {
 
   const handleAddToCart = () => {
     addToCart({ ...product, quantity });
+    setToastMessage(`${quantity} ${product.title} added to cart successfully!`)
   };
 
   const handleDecrease = () => {
@@ -88,6 +91,9 @@ export default function ProductDetail() {
           >
             Back
           </button> */}
+          {toastMessage && (
+                  <Toast message={toastMessage} onClose={() => setToastMessage("")} />
+                )}
         </div>
         
         
