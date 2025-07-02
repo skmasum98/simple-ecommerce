@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router'
 import { CartContext } from '../context/CartContext'
 import { useContext, useState } from 'react'
@@ -6,12 +6,30 @@ import Logo from '../assets/logo.png'
 import SearchBar from './SearchBar'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars , faXmark, faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 
 
 function Navbar() {
   const { cartItems } = useContext(CartContext)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
+  const searchRef = useRef();
+
+  //mobile search
+      useEffect(() => {
+      const handleClickOutside = (e) => {
+        if (searchRef.current && !searchRef.current.contains(e.target)) {
+          setShowMobileSearch(false);
+        }
+      };
+      document.addEventListener("mousedown", handleClickOutside);
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+      };
+    }, []);
+
+
 
   
   return (
@@ -37,14 +55,36 @@ function Navbar() {
             <img className="max-h-12 w-auto" src={Logo} alt="Logo" />
           </Link>
 
-          {/* Right: cart */}
-          <div className="relative">
-            <Link to="/cart" aria-label="Cart">
-              <FontAwesomeIcon icon={faShoppingCart} className="w-6 h-6" />
-              <span className="absolute -top-2 -right-3 bg-red-500 text-xs rounded-full w-5 h-5 flex justify-center items-center">
-                {cartItems.length}
-              </span>
-            </Link>
+          
+          {/* Right: search + cart */}
+          <div className="flex items-center gap-4 relative">
+            {/* search icon */}
+            <button
+              onClick={() => setShowMobileSearch(!showMobileSearch)}
+              aria-label="Search"
+            >
+              <FontAwesomeIcon icon={faMagnifyingGlass} className="w-5 h-5" />
+            </button>
+
+            {/* cart */}
+            <div className="relative">
+              <Link to="/cart" aria-label="Cart">
+                <FontAwesomeIcon icon={faShoppingCart} className="w-6 h-6" />
+                <span className="absolute -top-2 -right-3 bg-red-500 text-xs rounded-full w-5 h-5 flex justify-center items-center">
+                  {cartItems.length}
+                </span>
+              </Link>
+            </div>
+
+            {/* popped search input */}
+            {showMobileSearch && (
+              <div
+                ref={searchRef}
+                className="absolute top-10 right-8 w-70 text-sm bg-white p-3 rounded shadow z-50"
+              >
+                <SearchBar />
+              </div>
+            )}
           </div>
         </div>
 
