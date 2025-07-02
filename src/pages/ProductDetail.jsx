@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router";
 import { useContext, useState } from "react";
-import productsData from "../data/Products";
+import useProducts from "../hooks/useProducts";
 import { CartContext } from "../context/CartContext";
 import Toast from "../components/Toast";
 
