@@ -1,38 +1,43 @@
-import { useParams, useNavigate } from "react-router";
-import { useContext, useState } from "react";
-import useProducts from "../hooks/useProducts";
+import { useNavigate, useParams } from "react-router";
+import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
+import useProducts from "../hooks/useProducts";
 import Toast from "../components/Toast";
 
-export default function ProductDetail() {
+export default function ProductDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { products, loading } = useProducts();
   const { addToCart } = useContext(CartContext);
-
-  const product = productsData.find((p) => p.id === Number(id));
-  const [quantity, setQuantity] = useState(1);
   const [toastMessage, setToastMessage] = useState("");
+  const [quantity, setQuantity] = useState(1);
+
+  if (loading) {
+  return <div className="text-center py-20 text-gray-500">Loading product...</div>;
+}
+
+  const product = products.find((p) => String(p.id) === id);
 
   if (!product) {
     return (
       <div className="p-4 text-center">
-        <h2 className="text-xl font-semibold text-red-600 mb-4">Product not found</h2>
-        <button
-          onClick={() => navigate("/")}
-          className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
-        >
-          Go Home
-        </button>
-      </div>
-    );
+      <h2 className="text-xl font-semibold text-red-600 mb-4">Product not found</h2>
+       <button
+         onClick={() => navigate("/")}
+         className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+       >
+         Go Home
+       </button>
+     </div>
+    )
   }
 
   const handleAddToCart = () => {
-    addToCart({ ...product, quantity });
-    setToastMessage(`${quantity} ${product.title} added to cart successfully!`)
+    addToCart(product, quantity );
+    setToastMessage(`${quantity} ${product.title} added to cart!`);
   };
 
-  const handleDecrease = () => {
+    const handleDecrease = () => {
     setQuantity((q) => (q > 1 ? q - 1 : 1));
   };
 
@@ -50,12 +55,10 @@ export default function ProductDetail() {
             className="w-full max-w-xs md:max-w-sm rounded-lg object-contain transition-transform duration-300 hover:scale-105"
           />
         </div>
-        
       </div>
       <div className="flex-1 flex flex-col justify-center px-2">
         <h1 className="text-4xl font-extrabold mb-3 text-gray-900">{product.title}</h1>
         <div className="flex gap-2 mb-1.5">
-          
           <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded text-xs font-semibold">Free Shipping</span>
           <span className="bg-green-100 text-green-700 px-3 py-1 rounded text-xs font-semibold">In Stock</span>
         </div>
@@ -85,24 +88,17 @@ export default function ProductDetail() {
           >
             Add to Cart
           </button>
-          {/* <button
-            onClick={() => navigate(-1)}
-            className="bg-gray-200 text-gray-800 px-8 py-3 rounded-lg hover:bg-gray-300 transition font-bold shadow"
-          >
-            Back
-          </button> */}
           {toastMessage && (
-                  <Toast message={toastMessage} onClose={() => setToastMessage("")} />
-                )}
+            <Toast message={toastMessage} onClose={() => setToastMessage("")} />
+          )}
         </div>
-        
-        
+
         <div className="mt-8 border-t pt-4">
           <h3 className="font-semibold mb-2 text-gray-800">Why shop with us?</h3>
           <ul className="list-disc list-inside text-gray-500 text-sm space-y-1">
-            <li>Fast &amp; free shipping on all orders</li>
+            <li>Fast & free shipping on all orders</li>
             <li>30-day hassle-free returns</li>
-            <li>Secure checkout &amp; payment</li>
+            <li>Secure checkout & payment</li>
             <li>24/7 customer support</li>
           </ul>
         </div>

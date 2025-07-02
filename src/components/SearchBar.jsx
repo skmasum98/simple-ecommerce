@@ -9,7 +9,10 @@ export default function SearchBar() {
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate("/"); // redirect to Home so it shows results
+    // give the results time to render, then clear
+  setTimeout(() => {
     setSearchTerm("");
+  }, 5000); // adjust delay if needed
   };
 
   return (
