@@ -50,7 +50,7 @@ export default function Cart() {
         </div>
       ) : (
         <div className="bg-white rounded-lg shadow-lg overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full text-xs sm:text-sm md:text-base">
             <thead>
               <tr className="bg-gray-100 text-gray-700">
                 <th className="py-3 px-2">Image</th>
@@ -65,21 +65,25 @@ export default function Cart() {
               {cartItems.map((item) => (
                 <tr key={item.id} className="border-t hover:bg-gray-50">
                   <td className="py-2 px-2">
-                    <img src={item.image} alt={item.title} className="w-16 h-16 object-cover rounded" />
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-14 h-14 sm:w-16 sm:h-16 object-cover rounded"
+                    />
                   </td>
                   <td className="py-2 px-2 font-semibold">{item.title}</td>
                   <td className="py-2 px-2">${item.price}</td>
                   <td className="py-2 px-2">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center ">
                       <button
                         onClick={() => handleDecrease(item.id)}
-                        className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 text-lg font-bold"
+                        className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 text-base md:text-lg font-bold"
                         aria-label="Decrease quantity"
                       >-</button>
                       <span className="px-2">{item.quantity}</span>
                       <button
                         onClick={() => handleIncrease(item.id)}
-                        className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 text-lg font-bold"
+                        className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300 text-base md:text-lg font-bold"
                         aria-label="Increase quantity"
                       >+</button>
                     </div>
@@ -88,7 +92,7 @@ export default function Cart() {
                   <td className="py-2 px-2">
                     <button
                       onClick={() => handleRemove(item.id)}
-                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
+                      className="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition text-xs sm:text-sm md:text-base"
                     >
                       Remove
                     </button>
@@ -100,18 +104,20 @@ export default function Cart() {
               ))}
             </tbody>
           </table>
-          <div className="flex flex-col sm:flex-row justify-between items-center mt-6 px-4 pb-4">
-            <div className="text-lg font-bold text-gray-800">
+
+          <div className="flex flex-col sm:flex-row justify-between items-center mt-6 px-4 pb-4 text-sm md:text-base">
+            <div className="font-bold text-gray-800">
               Total: <span className="text-blue-600">${total.toFixed(2)}</span>
             </div>
             <button
-              className="mt-4 sm:mt-0 bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition font-bold shadow"
+              className="mt-4 sm:mt-0 bg-green-600 text-white px-6 py-2 sm:px-8 sm:py-3 rounded-lg hover:bg-green-700 transition font-bold shadow text-sm md:text-base"
               onClick={() => navigate("/checkout")}
             >
               Proceed to Checkout
             </button>
           </div>
         </div>
+
       )}
     </div>
   );
