@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-black text-white mt-8">
       <div className="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className='text-left'>
-          <h2 className="font-bold text-green-500 text-lg mb-2">THEWEBPAL</h2>
+          <h2 className="font-bold text-green-500 text-lg mb-2">THE<b className='text-white'>WEB</b>PAL</h2>
           <p className="text-sm">
             Your one-stop shop for quality products and great deals. Shop with confidence and enjoy fast delivery!
           </p>
@@ -40,7 +40,15 @@ export default function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-700 text-center py-3 text-xs text-gray-400">
-        &copy; {new Date().getFullYear()} <span className="font-semibold text-blue-400">thewebpal</span>. All rights reserved.
+        &copy; {new Date().getFullYear()} 
+        <a
+          href="https://thewebpal.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-blue-400 hover:underline"
+        >
+          thewebpal
+        </a>. All rights reserved.
       </div>
     </footer>
   )

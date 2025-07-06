@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { CartContext } from "../context/CartContext";
 import { useNavigate } from "react-router";
 import Toast from "../components/Toast";
+import ProductCarousel from "../components/ProductCarasole";
 
 export default function Cart() {
   const { cartItems, removeFromCart, setCartItems } = useContext(CartContext);
@@ -36,6 +37,7 @@ export default function Cart() {
   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
+    <>
     <div className="p-4 min-h-[70vh] max-w-5xl mx-auto">
       <h1 className="text-3xl font-extrabold mb-6 text-gray-900">Your Cart</h1>
       {cartItems.length === 0 ? (
@@ -120,5 +122,9 @@ export default function Cart() {
 
       )}
     </div>
+    <div>
+      <ProductCarousel />
+    </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { CartContext } from "../context/CartContext";
 import useProducts from "../hooks/useProducts";
 import Toast from "../components/Toast";
+import  ProductCarousel  from "../components/ProductCarasole";
 
 export default function ProductDetails() {
   const { id } = useParams();
@@ -46,6 +47,7 @@ export default function ProductDetails() {
   };
 
   return (
+    <>
     <div className="p-4 min-h-[70vh] flex flex-col md:flex-row gap-10 max-w-5xl mx-auto bg-white rounded-xl shadow-2xl border border-gray-100">
       <div className="flex-1 flex flex-col items-center justify-center">
         <div className="bg-gray-100 rounded-lg p-6 w-full flex items-center justify-center shadow-inner">
@@ -103,6 +105,11 @@ export default function ProductDetails() {
           </ul>
         </div>
       </div>
+      
     </div>
+    <div className="mt-10">
+      <ProductCarousel />
+    </div>
+    </>
   );
 }
