@@ -1,4 +1,3 @@
-```markdown
 # 🛍️ TheWebPal E-Commerce App
 
 A responsive full-featured e-commerce application built with **React**, **Tailwind CSS**, and **Context API**. It features product listing, filtering, search, cart functionality (with localStorage), checkout flow, toast notifications, and a featured product carousel.
@@ -28,8 +27,9 @@ A responsive full-featured e-commerce application built with **React**, **Tailwi
 
 ## 📁 Folder Structure
 
-```
 
+
+```plaintext
 src/
 ├── assets/
 ├── components/
@@ -50,8 +50,9 @@ src/
 │   ├── Checkout.jsx
 │   └── ProductDetails.jsx
 └── App.jsx
+└── index.js
+```
 
-````
 
 ## 🧑‍💻 Getting Started
 
@@ -60,7 +61,7 @@ src/
 ```bash
 git clone https://github.com/skmasum98/simple-ecommerce
 cd simple-ecommerce
-````
+```
 
 ### 2. Install dependencies
 
