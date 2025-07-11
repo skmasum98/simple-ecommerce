@@ -1,12 +1,98 @@
-# React + Vite
+```markdown
+# 🛍️ TheWebPal E-Commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive full-featured e-commerce application built with **React**, **Tailwind CSS**, and **Context API**. It features product listing, filtering, search, cart functionality (with localStorage), checkout flow, toast notifications, and a featured product carousel.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Browse & search products
+- ✅ Filter products by price
+- ✅ Add to cart with quantity control
+- ✅ Cart persisted in `localStorage`
+- ✅ Checkout form with validation
+- ✅ Responsive design for all devices
+- ✅ Product detail page
+- ✅ Toast notifications
+- ✅ Coupon support & delivery logic
+- ✅ Randomized featured product carousel
+- ✅ Built with clean React code & reusable components
 
-## Expanding the ESLint configuration
+## 🛠 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚛️ React (Vite)
+- 💨 Tailwind CSS
+- 🧠 React Context API
+- 🔥 Font Awesome
+- 📦 localStorage for persistence
+- 📁 JSON-based fake product API
+
+## 📁 Folder Structure
+
+```
+
+src/
+├── assets/
+├── components/
+│   ├── Navbar.jsx
+│   ├── Footer.jsx
+│   ├── ProductCard.jsx
+│   └── ...
+├── context/
+│   ├── CartContext.js
+│   └── SearchContext.js
+├── data/
+│   └── products.json
+├── hooks/
+│   └── useProducts.js
+├── pages/
+│   ├── Home.jsx
+│   ├── Cart.jsx
+│   ├── Checkout.jsx
+│   └── ProductDetails.jsx
+└── App.jsx
+
+````
+
+## 🧑‍💻 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/skmasum98/simple-ecommerce
+cd simple-ecommerce
+````
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Run the project
+
+```bash
+npm run dev
+```
+
+### 4. Build for production
+
+```bash
+npm run build
+```
+
+## 🌐 Live Demo
+
+[🔗 thewebpal.netlify.app](https://thewebpal.netlify.app/)
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+> Built with ❤️ by [Masum](https://thewebpal.com)
+
+```
+
+---
+
